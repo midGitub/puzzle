@@ -1,0 +1,26 @@
+……修改AndroidManifest.xml……
+
+添加网络连接允许：
+<uses-permission android:name="android.permission.INTERNET"/>
+
+添加网络权限访问允许：
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+获取IMEI码:
+<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+
+……添加网络判断功能……
+
+proj.android\src\com\go2game\yzcard\Network下添加
+NetworkJudgment.java
+
+注意包名的更改和项目名的更改的时候需要相应的变化
+
+
+……添加IMEI获取功能……
+
+proj.android\src\com\go2game\yzcard\Phone下添加
+PhoneImei.java
+
+注意包名的更改和项目名的更改的时候需要相应的变化

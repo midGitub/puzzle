@@ -1,0 +1,10 @@
+$#include "AssetsManager/AssetsManager.h"
+$USING_NS_CC;
+$USING_NS_CC_EXT;
+
+$#include "CCLuaEngine.h"
+$#include "Extension/AssetsManagerDelegate/AssetsManagerDelegate.h"
+
+
+$pfile "AssetsManager.pkg"
+$pfile "AssetsManagerDelegate.pkg"

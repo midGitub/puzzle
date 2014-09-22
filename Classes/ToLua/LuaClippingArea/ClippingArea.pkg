@@ -1,0 +1,54 @@
+class ClippingArea:public CCNode
+{
+    /** 新建一个空的，在后面设置
+    */
+    static ClippingArea *create();
+    /** 从一个裁剪模板新建
+    */
+    static ClippingArea *create(CCNode *stencil);
+
+    /** 析构函数
+    */
+    virtual ~ClippingArea();
+
+    /** 初始化，没有裁剪模板
+    */
+    virtual bool init();
+    /** 初始化，使用裁剪模板
+    */
+    virtual bool init(CCNode *stencil);
+
+    /** 设置裁剪模板
+    */
+    void setStencil(CCNode *stencil);
+    /** 获取裁剪模板对象
+    */
+    CCNode *getStencil() const;
+    
+    /** 设置裁剪区域大小
+    */
+    void setClippingSize(CCSize size);
+    /** 返回裁剪区域大小
+    */
+    const CCSize getClippingSize();
+
+    //转换裁剪区域为世界区域
+    const CCRect convertStencilToWorldRect();
+
+    /** 设置是否启用裁剪
+    */
+    void setClippingEnabled(bool enabled);
+    /** 返回是否启用裁剪
+    */
+    bool isClipping();
+
+    /** 继承visit函数，重写来达到裁剪的目的
+    */
+    virtual void visit();
+    /** 计算裁剪区域，并且开启裁剪
+    */
+    void beforeDraw();
+    /** 关闭裁剪区
+    */
+    void afterDraw();
+};
